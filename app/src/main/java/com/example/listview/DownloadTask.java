@@ -2,7 +2,8 @@ package com.example.listview;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
+import android.view.Menu;
+import android.view.MenuItem;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -19,7 +20,7 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
     private static final String TAG = "DownloadTask";
     private static final int BUFFER_SIZE = 8096;
     Activity_ListView myActivity;
-
+    private boolean isThereAErrorCode= false;
     // 1 second
     private static final int TIMEOUT = 1000;
     private String myQuery = "";
@@ -90,9 +91,9 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
                 if (statusCode / 100 != 2) {
                     Log.e(TAG, "Error-connection.getResponseCode returned "
                             + Integer.toString(statusCode));
+                    isThereAErrorCode = true;
                     return null;
                 }
-
                 in = new BufferedReader(new InputStreamReader(connection.getInputStream()), 8096);
 
                 // the following buffer will grow as needed
@@ -113,11 +114,20 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
             exc.printStackTrace();
             return null;
         }
+
     }
 
     @Override
     protected void onPostExecute(String result) {
         //TODO Your Stuff Here
+        if(isThereAErrorCode){
+            myActivity.setContentView(R.layout.errorcode);
+        }
+        else {
+                myActivity.setContentView(R.layout.activity_main);
+                myActivity.setup();
+                myActivity.onPost(result);
+        }
     }
 
     /*

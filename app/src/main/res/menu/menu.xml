@@ -6,6 +6,8 @@
         android:id="@+id/action_settings"
         android:icon="@drawable/action_settings1"
         app:showAsAction="never"
-        android:title="Settings"></item>
+        android:title="Settings"
+     >
+    </item>
 
 </menu>

@@ -2,8 +2,8 @@
 <resources>
     <string-array name="sortable_fields">
         <item>Company</item>
-         <item>Model</item>
-        <item>Price</item>
         <item>Location</item>
+        <item>Price</item>
+        <item>Model</item>
    </string-array>
 </resources>

@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
 
-    <ImageView
+    <com.example.listview.WebImageView_KP
       	android:id="@+id/imageView1"
         android:layout_width="65dp"
         android:layout_height="65dp"
@@ -35,7 +35,7 @@
         android:text="$$$$"
         android:textColor="@android:color/holo_red_light"
         android:textSize="12dip" />
-    <TextView
+ <TextView
         android:id="@+id/Description"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -46,6 +46,7 @@
         android:text="desc"
         android:textColor="@android:color/black"
         android:textSize="13dip" />
+
 
 
 

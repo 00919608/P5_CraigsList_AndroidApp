@@ -5,7 +5,7 @@
  <item>@string/tetonNAME</item>
  </string-array>
 <string-array name="JSON_URL">
- <item>http://www.pcs.cnu.edu/~kperkins/bikes/</item>
+ <item>@string/pcsURL</item>
  <item>@string/tetonURL</item>
  </string-array>
 </resources>
