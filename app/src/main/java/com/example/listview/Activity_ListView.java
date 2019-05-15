@@ -20,7 +20,6 @@ import java.util.List;
 
 public class Activity_ListView extends AppCompatActivity {
 
-	Activity_ListView myActivity = this;
 	private ListView my_listview;
 	private ImageView refresh;
 	private ArrayAdapter<String> myAdapter;
